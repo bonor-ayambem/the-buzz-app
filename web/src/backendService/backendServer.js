@@ -118,10 +118,10 @@ export async function get_User() {
   try {
     // const { data } = await axios.get(api + `/users`); route didn't work, return static data
     return {
-      mUser: "alb323",
-      mFirstName: "Abraham",
-      mLastName: "Berlin",
-      mEmail: "alb323@lehigh.edu",
+      mUser: "bma223",
+      mFirstName: "Bonor",
+      mLastName: "Ayambem",
+      mEmail: "bma223@lehigh.edu",
       mBio: "MY NAME IS JEFF AND I LOVE YOU",
     };
   } catch (error) {
@@ -140,7 +140,7 @@ export async function modify_User(mUser, mFirstName, mEmail, mBio) {
   } catch (error) {
     console.log(error.message);
   }
-} (edited) 
+}
 
 /*
 //Google oAuth ??

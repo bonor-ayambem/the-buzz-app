@@ -1,0 +1,38 @@
+[
+    {
+        "mID": "p1",
+        "mAuthor": "Author 1",
+        "likes": "1",
+        "title": "Item 1",
+        "message": "Description 1",
+        "cAuthor": "Commenter 1",
+        "comment": "cool post!"
+    },
+    {
+        "mID": "p2",
+        "mAuthor": "Author 2",
+        "likes": "2",
+        "title": "Item 2",
+        "message": "Description 2",
+        "cAuthor": "Commenter 2",
+        "comment": "I agree compeltely"
+    },
+    {
+        "mID": "p3",
+        "mAuthor": "Author 3",
+        "likes": "3",
+        "title": "Item 3",
+        "message": "Description 3",
+        "cAuthor": "Commenter 3",
+        "comment": "I disagree respectfully"
+    },
+    {
+        "mID": "p4",
+        "mAuthor": "Author 4",
+        "likes": "4",
+        "title": "Item 4",
+        "message": "Description 4",
+        "cAuthor": "Commenter 4",
+        "comment": "how did I get here"
+    }
+]

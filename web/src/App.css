@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Andika&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #ffffff;
+}
+button {
+  all: unset;
+  font-size: 12px;
+  color: rgb(37, 27, 27);
+  padding: 7px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* logo */
+.logo {
+  width: 250px;
+  border-radius: 20px;
+}
+.logo:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+/*make the logo shake*/
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+/* App Comp */
+
+.App {
+  padding-top: 50px;
+  font-family: "Andika", sans-serif;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  color: #585858;
+}
+
+.app__title {
+  color: rgb(174, 200, 219);
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.app__Links {
+  margin-bottom: 30px;
+}
+.app__Links a {
+  all: unset;
+  color: #b1b1b1;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: all 0.15s ease-out;
+  user-select: none;
+}
+.app__Links a:hover {
+  color: #919191;
+}
+.app__Links a.active {
+  color: #585858;
+  text-decoration: underline;
+  pointer-events: none;
+}
+
+.app__container {
+  display: flex;
+  justify-content: center;
+  width: 550px;
+  margin: auto;
+  min-height: 300px;
+  max-height: 65vh;
+  overflow-y: auto;
+  border: 1px solid gainsboro;
+  padding: 50px 80px;
+}
+/*mainContent*/
+.mainContent {
+  width: 320px;
+}
+.mainContent h3 {
+  color: #d1ad34;
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* New message comps */
+.newMessage__container__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+.newMessage__container img {
+  cursor: pointer;
+  transition: all 0.15s ease-out;
+}
+
+.newMessage__container img:hover {
+  transform: scale(1.2) rotate(-5deg);
+}
+
+.newMessage__createMessage {
+  display: grid;
+}
+.newMessage__createMessage button {
+  margin-top: 10px;
+  background-color: rgb(216, 193, 116);
+  transition: all 0.15s ease-out;
+  color: rgb(73, 73, 73);
+}
+.newMessage__createMessage button:hover {
+  background-color: rgb(211, 171, 39);
+}
+
+input {
+  width: 70%;
+  border: 1px solid rgb(224, 210, 189);
+  margin: 10px 0px;
+  padding: 10px;
+  border-radius: 5px;
+  outline: 0;
+  overflow-y: hidden;
+  resize: none;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+textarea {
+  border: 1px solid rgb(224, 210, 189);
+  margin: 10px 0px;
+  padding: 10px;
+  border-radius: 5px;
+  outline: 0;
+  overflow-y: hidden;
+  resize: none;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+input:focus-within,
+textarea:focus-within {
+  border: 1px solid rgb(209, 142, 152);
+}
+
+/*Card*/
+.mainContent_subContainer {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-gap: 20px;
+  position: relative;
+}
+
+.card {
+  width: 320px;
+  min-height: 170px;
+  max-height: fit-content;
+  background-color: #fffbf7;
+  box-shadow: 1px 1px 7px #e6e0db;
+  transition: all 0.15s ease-out;
+  text-align: left;
+  position: relative;
+  padding: 10px 20px 20px;
+  margin-bottom: 25px;
+}
+.card__vote {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  gap: 10px;
+  display: flex;
+}
+.card__vote img {
+  cursor: pointer;
+}
+.card__mTitle {
+  font-size: 18px;
+  font-weight: 700;
+}
+.card__cAuthor {
+  font-size: 12px;
+  color: #b2bdba;
+  bottom: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+.card__comment {
+  font-size: 12px;
+  color: #b2bdba;
+  bottom: 10px;
+  display: inline-block;
+}
+.card__cEdit {
+  font-size: 12px;
+  color: #d8a881;
+  cursor: pointer;
+  bottom: 10px;
+  display: inline;
+  padding: 10px;
+}
+.card__mEdit {
+  font-size: 12px;
+  color: #d8a881;
+  position: absolute;
+  right: -7px;
+  cursor: pointer;
+  top: -30px;
+}
+.card__mEdit:hover,
+.card__cAuthor:hover,
+.card__cEdit:hover {
+  text-decoration: underline;
+}
+.card__message {
+  margin-bottom: 20px;
+  font-size: 15px;
+  display: block;
+}
+.card__mAuthor {
+  display: block;
+  font-size: 12px;
+  color: #b2bdba;
+  cursor: pointer;
+}
+.card__mAuthor:hover {
+  text-decoration: underline;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 1px 1px 15px #e6dbdb;
+}
+.auth__container {
+  height: 50px;
+}
+.card__submit {
+  background-color: rgb(216, 193, 116);
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  color: rgb(73, 73, 73);
+  padding: 7px 7px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.card__submit:hover {
+  background-color: rgb(211, 171, 39);
+}
+/* Profile Card */
+.pcard {
+  width: 400px;
+  min-height: 300px;
+  max-height: fit-content;
+  background-color: #fffbf7;
+  box-shadow: 1px 1px 7px #e6dbdb;
+  transition: all 0.15s ease-out;
+  text-align: left;
+  position: relative;
+  padding: 20px 20px 40px;
+}
+.pcard__edit {
+  font-size: 20px;
+  color: #d8a881;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  top: 10px;
+}
+.pcard__edit:hover {
+  text-decoration: underline;
+}
+.card_mEdit_submit {
+  all: unset;
+  font-size: 12px;
+  color: rgb(37, 27, 27);
+  padding: 7px 7px;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: rgb(136, 179, 135);
+  display: block;
+}
+.card_mEdit_cancel {
+  background-color: rgb(179, 135, 135);
+  display: inline-block;
+  padding: 7px 7px;
+}
+.card_mEdit_title {
+  width: 65%;
+}
+.card_mEdit_message {
+  width: 65%;
+}
+
+/* custom scrollbar */
+#my-signin2 {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #b9cfc9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(81, 107, 94);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(179, 167, 167);
+}
