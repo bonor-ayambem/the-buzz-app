@@ -1,0 +1,8 @@
+**/*.classpath
+**/*.project
+**/*.vscode/*
+**/*.settings/*
+*.class
+*.DS_Store
+backend/node_modules
+**/target/*

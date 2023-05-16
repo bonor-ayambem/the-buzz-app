@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\admin-cli",
+    "\\admin-cli\\src",
+    "\\admin-cli\\src\\main",
+    "\\admin-cli\\src\\main\\java",
+    "\\admin-cli\\src\\main\\java\\edu",
+    "\\admin-cli\\src\\main\\java\\edu\\lehigh",
+    "\\admin-cli\\src\\main\\java\\edu\\lehigh\\cse216",
+    "\\admin-cli\\src\\main\\java\\edu\\lehigh\\cse216\\alb323",
+    "\\admin-cli\\src\\main\\java\\edu\\lehigh\\cse216\\alb323\\admin"
+  ],
+  "SelectedNode": "\\backend\\src\\main\\java\\edu\\lehigh\\cse216\\alb323\\backend\\App.java",
+  "PreviewInSolutionExplorer": false
+}

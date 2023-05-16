@@ -1,0 +1,2 @@
+mvn clean package
+DATABASE_URL=postgres://eehbofgeeadmjf:753fdc0ca74cecb3502d61746fe358ead0c31c0dd7f7d474f7d3ff7593b01ebc@ec2-3-219-111-26.compute-1.amazonaws.com:5432/dco1kb5belobn0?sslmode=require CORS_ENABLED=True MEMCACHIER_PASSWORD=E52686AB00908BF80BD8A0ED1E1DB8C5 MEMCACHIER_SERVERS=mc5.dev.ec2.memcachier.com:11211 MEMCACHIER_USERNAME=13DC90 mvn exec:java
