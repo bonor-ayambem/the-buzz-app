@@ -3,20 +3,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class Table {
+public abstract class Table<T> {
     private String name;
     private Database db;
 
     private String deleteStatement;
     private String updateStatement;
-
-    private Connection mConnection;
-    private PreparedStatement mCreateTable;
-    private PreparedStatement mDropTable;
-    private PreparedStatement mDeleteRow;
-    private PreparedStatement mInsertRow;
-    private PreparedStatement mUpdateRow;
-    // Other prepared statements...
 
     public Table(String tName, Database db){
         name = tName;
@@ -29,34 +21,12 @@ public class Table {
         return name;
     }
 
-// will delete after confirmation that approach of creating the table in the database
-// before the Table object is good
-    // public void create(Database db) {
-    //     try {
-    //         if(name.equals("tblMessages")) {
-    //             db.mCreateTable = db.mConnection.prepareStatement("CREATE TABLE IF NOT EXISTS tblMessages (row_id SERIAL PRIMARY KEY, subject VARCHAR(50) NOT NULL, content VARCHAR(500) NOT NULL, user_id INTEGER REFERENCES tblUsers)");
-    //         }
-    //         else if(name.equals("tblComment")) {
-    //             db.mCreateTable =  db.mConnection.prepareStatement("CREATE TABLE IF NOT EXISTS tblComment (row_id SERIAL PRIMARY KEY, message_id INTEGER REFERENCES tblMessages, user_id INTEGER REFERENCES tblUsers, content VARCHAR(500) NOT NULL)");
-    //         }
-    //         else if(name.equals("tblUsers")) {
-    //             db.mCreateTable = db.mConnection.prepareStatement("CREATE TABLE IF NOT EXISTS tblUsers (row_id SERIAL PRIMARY KEY, user_name VARCHAR(500) NOT NULL, first_name VARCHAR(500) NOT NULL, last_name VARCHAR(500) NOT NULL, email VARCHAR(500) NOT NULL)");
-    //         }
-    //         else if(name.equals("tblLikes")) {
-    //             db.mCreateTable = db.mConnection.prepareStatement("CREATE TABLE IF NOT EXISTS tblLikes (row_id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES tblUsers, message_id INTEGER REFERENCES tblMessages, content INTEGER)");    
-    //         }
-
-    //         db.mCreateTable.execute();
-    //     } catch (SQLException e) {
-    //         e.printStackTrace();
-    //     }
-    // }
+    public abstract void create() throws SQLException;
 
     public void drop() {
         String statement = "DROP TABLE IF EXISTS " + name + " CASCADE;";
         try {
-            db.mDropTable = db.mConnection.prepareStatement(statement);
-            db.mDropTable.execute();
+            db.mConnection.prepareStatement(statement).execute();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -103,4 +73,7 @@ public class Table {
         }
         return 0;
     }
+
+    public abstract ArrayList<T> selectAll(int id) throws SQLException;
+    public abstract T selectOne(int id) throws SQLException;
 }
