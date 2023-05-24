@@ -7,6 +7,7 @@ public class Table {
     private String name;
 
     private String deleteStatement;
+    private String updateStatement;
 
     private Connection mConnection;
     private PreparedStatement mCreateTable;
@@ -18,6 +19,8 @@ public class Table {
 
     public Table(String tName){
         name = tName;
+        deleteStatement = "DELETE FROM " + name + " WHERE row_id = ?";
+        updateStatement = "UPDATE " + name + " SET content = ? WHERE row_id = ?";
     }
 
     public String getName(){
