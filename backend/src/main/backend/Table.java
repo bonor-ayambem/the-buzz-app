@@ -59,12 +59,11 @@ public class Table {
     }
 
     public int insertRow(Database db, ArrayList<String> content) {
-        StringBuilder statement = new StringBuilder("INSERT INTO " + name + " VALUES (default");
+        StringJoiner statement = new StringJoiner(", ", "INSERT INTO " + name + " VALUES (default,", ")");
 
         for (int i = 0; i < content.size(); i++) {
-            statement.append(", ?");
+            statement.add(" ?");
         }
-        statement.append(")");
 
         try {
             db.mInsertRow = db.mConnection.prepareStatement(statement.toString());
@@ -79,9 +78,8 @@ public class Table {
     }
 
     public int updateRow(Database db, int row_id, String content) {
-        String statement = "UPDATE tblMessages SET content = ? WHERE row_id = ?";
         try {
-            db.mUpdateRow = db.mConnection.prepareStatement(statement);
+            db.mUpdateRow = db.mConnection.prepareStatement(updateStatement);
             db.mUpdateRow.setString(1, content);
             db.mUpdateRow.setInt(2, row_id);
             return db.mUpdateRow.executeUpdate();
