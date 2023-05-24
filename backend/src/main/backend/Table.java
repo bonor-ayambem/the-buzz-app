@@ -6,6 +6,8 @@ import java.util.ArrayList;
 public class Table {
     private String name;
 
+    private String deleteStatement;
+
     private Connection mConnection;
     private PreparedStatement mCreateTable;
     private PreparedStatement mDropTable;
@@ -87,9 +89,8 @@ public class Table {
     }
 
     public int deleteRow(Database db, int row_id) {
-        String statement = "DELETE FROM " + name + " WHERE row_id = ?";
         try {
-            db.mDeleteRow = db.mConnection.prepareStatement(statement);
+            db.mDeleteRow = db.mConnection.prepareStatement(deleteStatement);
             db.mDeleteRow.setInt(1, row_id);
             return db.mDeleteRow.executeUpdate();
         } catch (SQLException e) {
