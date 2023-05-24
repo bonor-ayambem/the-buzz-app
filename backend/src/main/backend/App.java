@@ -142,19 +142,6 @@ public class App {
         dataStore.dropTable(likesTable);
         dataStore.createTable(likesTable); 
 
-        
-        // dataStore.dropTableUser();
-        // dataStore.createTableUser();
-        
-        // dataStore.dropTableMessages();
-        // dataStore.createTableMessages();
-
-        // dataStore.dropTableComment();
-        // dataStore.createTableComment();
-
-        // dataStore.dropTableLikes();
-        // dataStore.createTableLikes();
-
         // Set up the location for serving static files.  If the STATIC_LOCATION
         // environment variable is set, we will serve from it.  Otherwise, serve
         // from "/web"
