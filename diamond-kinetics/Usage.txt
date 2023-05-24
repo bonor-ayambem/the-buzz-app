@@ -1,0 +1,22 @@
+Table<messageTable> messageTable = new Table<>("tblMessages", db);
+Table<likesTable> likesTable = new Table<>("tblLikes", db);
+Table<commentTable> commentTable = new Table<>("tblComments", db);
+
+
+// create a table
+messageTable.create("CREATE TABLE IF NOT EXISTS tblMessages (id INT PRIMARY KEY, name VARCHAR(50) NOT NULL)");
+
+// insert a row
+messageTable.insert(new messageTable(1, "Message 1", 100), "INSERT INTO tblMessages VALUES (?, ?, ?)");
+
+// select all rows
+ArrayList<messageTable> messages = messageTable.selectAll("SELECT * FROM tblMessages");
+
+// update a row
+messageTable.update(new messageTable(1, "Updated Message", 200), "UPDATE tblMessages SET name = ?, value = ? WHERE id = ?");
+
+// delete a row
+messageTable.delete(1, "DELETE FROM tblMessages WHERE id = ?");
+
+// select a single row
+messageTable message = messageTable.selectOne(1, "SELECT * FROM tblMessages WHERE id = ?");
