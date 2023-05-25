@@ -1,6 +1,6 @@
-Table<messageTable> messageTable = new Table<>("tblMessages", db);
-Table<likesTable> likesTable = new Table<>("tblLikes", db);
-Table<commentTable> commentTable = new Table<>("tblComments", db);
+Table<messageRow> messageTable = new Table<>("tblMessages", db);
+Table<likesRow> likesTable = new Table<>("tblLikes", db);
+Table<commentRow> commentTable = new Table<>("tblComments", db);
 
 
 // create a table
