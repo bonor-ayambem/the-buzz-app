@@ -123,19 +123,24 @@ public class App {
         */
         
         Database dataStore = Database.getDatabase(db_url);        
-        //PHASE 2
         
-        dataStore.dropTableUser();
-        dataStore.createTableUser();
+        Table userTable = new Table("tblUser");
+        Table messageTable = new Table("tblMessages");
+        Table commentTable = new Table("tblComment");
+        Table likesTable = new Table("tblLikes");
+
+
+        dataStore.dropTable(userTable);
+        dataStore.createTable(userTable); 
+
+        dataStore.dropTable(messageTable);
+        dataStore.createTable(messageTable); 
         
-        dataStore.dropTableMessages();
-        dataStore.createTableMessages();
+        dataStore.dropTable(commentTable);
+        dataStore.createTable(commentTable); 
 
-        dataStore.dropTableComment();
-        dataStore.createTableComment();
-
-        dataStore.dropTableLikes();
-        dataStore.createTableLikes();
+        dataStore.dropTable(likesTable);
+        dataStore.createTable(likesTable); 
 
         // Set up the location for serving static files.  If the STATIC_LOCATION
         // environment variable is set, we will serve from it.  Otherwise, serve

@@ -1,0 +1,32 @@
+Problems:
+--> [FIXED?]
+    the table class is too general. each instance of the class can create
+    tables for all the other tables.
+    For example, the Table object with name "tblMessages" can be used to 
+    create a new table in the database by a different name, "tblLikes."
+    * Need to make Table class more specific
+    * Store a list of Tables in Database.java?
+
+--> [IN PROGRESS]
+    App.java is not yet fully updated to be compatible with the new
+    Database.java
+    * each call to insert a row to a table will need to send the new row info
+      in a list. the order of this list will be sensitive (see insertRow())
+
+
+
+Other Notes:
+--> The Table object is different from a table created in the database. each
+    table in the database has a corresponding Table object that allows us to
+    perform operations on the table using generalized prepared statements.
+
+--> Some methods and operations have not yet been standardized:
+    * The _select_ methods all have different return types based on other.
+      classes this is making it more difficult to standardize them
+
+--> Originally, the rows in each table had id's and those id variables were
+    according to the table they were in. For example, tblMessages contained
+    a column called message_id.
+    These were all changed to just row_id to allow for generality in Table.java
+    so that a row in any table could be identified by its id
+    * Same thing with tblLikes. Changed column from "flag" to "content"
