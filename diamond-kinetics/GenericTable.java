@@ -5,10 +5,12 @@ import java.util.ArrayList;
 public class GenericTable<T> {
     private String name;
     private Database db;
+    private String insertStatement;
 
-    public Table(String tName, Database db){
+    public Table(String tName, Database db, String is){
         name = tName;
         this.db = db;
+        insertStatement = is;
     }
 
     public String getName(){
@@ -32,7 +34,7 @@ public class GenericTable<T> {
         }
     }
 
-    public int insert(T item, String insertStatement) throws SQLException {
+    public int insert(T item) throws SQLException {
         try {
             PreparedStatement preparedStatement = db.mConnection.prepareStatement(insertStatement);
             // Set the values in the prepared statement based on the item's properties
